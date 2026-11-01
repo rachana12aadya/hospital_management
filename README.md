@@ -8,7 +8,7 @@ Open `index.html` from a static server. The production deployment is on Vercel. 
 
 ## Database
 
-The Supabase project and starter tables are configured. [`supabase.sql`](supabase.sql) documents the schema and access policies. Authenticated staff can access the starter tables. Review role-specific policies and privacy/security requirements before storing real patient records. The dashboard's demo records are fictional and are never written to Supabase.
+The Supabase project and starter tables are configured. [`supabase.sql`](supabase.sql) documents the schema and access policies. Authenticated staff can access the starter tables. Review role-specific policies and privacy/security requirements before storing real patient records. The preview contains six fictional patients and seven sample appointments for trying the dashboard. Preview changes stay in memory and are never written to Supabase.
 
 ## Authentication
 
