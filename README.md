@@ -12,7 +12,7 @@ The Supabase project and starter tables are configured. [`supabase.sql`](supabas
 
 ## Authentication
 
-Sign in with a hospital email to receive a Supabase email link. The Vercel production URL is configured as the Supabase site URL and redirect URL. Add staff accounts in Supabase Auth if email sign-in is restricted.
+Only existing Supabase staff accounts can sign in; the app does not allow new users to self-register. Add staff accounts in Supabase Auth, then sign in with the matching hospital email. The Vercel production URL is configured as the Supabase site URL and redirect URL.
 
 ## Deploy
 
