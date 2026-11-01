@@ -16,7 +16,7 @@ Only existing Supabase staff accounts can sign in; the app does not allow new us
 
 ## Admin availability
 
-Open `/admin` to manage recurring doctor availability. `supabase-admin.sql` creates the doctor and availability tables, read/write policies, realtime publication, and fictional schedule rows. The migration grants admin rights to `rachana12aadya@gmail.com`. Admin edits require a Supabase Auth password for that confirmed account; the admin password is never stored in frontend code. Availability changes stream to active sessions through Supabase Realtime. `vercel.json` routes `/admin` to the static admin page.
+Open `/admin` to manage recurring doctor availability. `supabase-admin.sql` creates the doctor and availability tables, read/write policies, realtime publication, and fictional schedule rows. The migration grants admin rights to `rachana12aadya@gmail.com`. Admin edits require a Supabase Auth password for that confirmed account; the admin password is never stored in frontend code. Password recovery links open a password update form on the main dashboard. Availability changes stream to active sessions through Supabase Realtime. `vercel.json` routes `/admin` to the static admin page.
 
 ## Deploy
 
