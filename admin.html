@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#d9d9d9">
+  <title>Carewell · Admin availability</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/admin.css">
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <header class="admin-topbar">
+      <a class="brand" href="/" aria-label="Carewell dashboard"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span><span>carewell<span class="brand-period">.</span></span></a>
+      <div class="admin-header-actions"><span class="connection-badge" id="connection-state">Connecting</span><a class="button secondary" href="/">Dashboard</a><button class="button secondary" id="sign-out" hidden>Sign out</button></div>
+    </header>
+    <section class="admin-content">
+      <div class="page-heading"><div><span class="eyebrow">ADMINISTRATION</span><h1>Doctor availability</h1><p>Update weekly schedules. Changes appear for connected users right away.</p></div></div>
+      <section class="card admin-auth-card" id="login-panel">
+        <div class="admin-card-heading"><div><h2>Administrator sign in</h2><p>Use your Carewell admin username and password.</p></div></div>
+        <form id="login-form" class="admin-login-form">
+          <label>Username<input name="username" autocomplete="username" required></label>
+          <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+          <p class="form-error" id="login-error" role="alert"></p>
+          <button class="button primary" id="login-button">Sign in</button>
+        </form>
+      </section>
+      <div id="admin-workspace" hidden>
+        <div class="auth-banner"><div class="auth-banner-copy"><strong>Realtime schedule</strong>Updates sync across active sessions.</div><span class="connection-badge connected" id="realtime-state">Starting realtime</span></div>
+        <section class="card admin-editor">
+          <div class="admin-card-heading"><div><h2>Set availability</h2><p>One recurring weekly slot per doctor and day.</p></div></div>
+          <form id="availability-form" class="availability-form">
+            <label>Doctor<select name="doctor_id" id="doctor-select" required></select></label>
+            <label>Day<select name="day_of_week" required><option value="1">Monday</option><option value="2">Tuesday</option><option value="3">Wednesday</option><option value="4">Thursday</option><option value="5">Friday</option><option value="6">Saturday</option><option value="0">Sunday</option></select></label>
+            <label>Start time<input name="start_time" type="time" value="09:00" required></label>
+            <label>End time<input name="end_time" type="time" value="17:00" required></label>
+            <label>Status<select name="status"><option value="Available">Available</option><option value="Unavailable">Unavailable</option></select></label>
+            <label class="notes-field">Note<input name="note" maxlength="160" placeholder="Optional note"></label>
+            <p class="form-error form-error-wide" id="availability-error" role="alert"></p>
+            <div class="form-actions"><button class="button primary" id="save-availability">Save schedule</button></div>
+          </form>
+        </section>
+        <section class="card table-card availability-card">
+          <div class="table-title"><div><h2>Weekly availability</h2><p id="schedule-count">Loading schedule…</p></div><button class="text-button" id="refresh-schedule">Refresh</button></div>
+          <div class="table-scroll"><table><thead><tr><th>Doctor</th><th>Department</th><th>Day</th><th>Hours</th><th>Status</th><th>Note</th></tr></thead><tbody id="availability-rows"><tr><td colspan="6"><div class="loading-row"><span class="spinner" aria-label="Loading"></span></div></td></tr></tbody></table></div>
+        </section>
+      </div>
+    </section>
+    <footer class="footer"><span>Carewell Hospital Management</span><span>Admin access protected by Supabase</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/admin.js"></script>
+</body>
+</html>
+

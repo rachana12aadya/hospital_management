@@ -14,6 +14,10 @@ The Supabase project and starter tables are configured. [`supabase.sql`](supabas
 
 Only existing Supabase staff accounts can sign in; the app does not allow new users to self-register. Add staff accounts in Supabase Auth, then sign in with the matching hospital email. The Vercel production URL is configured as the Supabase site URL and redirect URL.
 
+## Admin availability
+
+Open `/admin` to manage recurring doctor availability. `supabase-admin.sql` creates the doctor and availability tables, read/write policies, realtime publication, and fictional schedule rows. The migration grants admin rights to `rachana12aadya@gmail.com`. Admin edits require a Supabase Auth password for that confirmed account; the admin password is never stored in frontend code. Availability changes stream to active sessions through Supabase Realtime. `vercel.json` routes `/admin` to the static admin page.
+
 ## Deploy
 
 Vercel deploys commits from the `main` branch. No build command is required; the project root is the output directory.

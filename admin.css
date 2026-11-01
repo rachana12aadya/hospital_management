@@ -1,0 +1,31 @@
+:root{--admin-content:1180px}
+[hidden]{display:none!important}
+.admin-body{background:var(--color-canvas);min-height:100vh}
+.admin-shell{min-height:100vh;background:var(--color-canvas);display:flex;flex-direction:column}
+.admin-topbar{height:74px;padding:0 32px;background:var(--color-white);border-bottom:1px solid var(--color-neutral-300);display:flex;align-items:center;justify-content:space-between;gap:18px}
+.admin-topbar .brand{margin:0}
+.admin-header-actions{display:flex;align-items:center;gap:10px}
+.admin-content{width:min(var(--admin-content),100%);margin:0 auto;padding:34px 28px 40px;flex:1}
+.admin-content .page-heading{margin-bottom:22px}
+.admin-content .page-heading h1{margin:6px 0}
+.admin-auth-card,.admin-editor{padding:22px;margin-bottom:18px}
+.admin-card-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.admin-card-heading h2,.table-title h2{font-size:15px;margin:0;font-weight:600}
+.admin-card-heading p,.table-title p{font-size:12px;color:var(--color-ink);margin:5px 0 0}
+.admin-login-form{display:grid;grid-template-columns:minmax(180px,1fr) minmax(180px,1fr) auto;gap:12px;align-items:end}
+.admin-login-form label,.availability-form label{display:grid;gap:6px;font-size:12px;color:var(--color-ink);font-weight:500}
+.admin-login-form input,.availability-form input,.availability-form select{width:100%;height:42px;padding:0 11px;border:1px solid var(--color-neutral-300);border-radius:10px;background:var(--color-white);color:var(--color-ink)}
+.admin-login-form input:focus-visible,.availability-form input:focus-visible,.availability-form select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-primary) 45%,transparent);outline-offset:1px}
+.availability-form{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1.4fr;gap:12px;align-items:end}
+.notes-field{grid-column:span 2}
+.form-error-wide{grid-column:1/-1;margin:0;min-height:0}
+.form-actions{grid-column:1/-1;display:flex;justify-content:flex-end}
+.availability-card{margin-top:18px}
+.availability-card .table-title{padding:18px 20px}
+.availability-card table{min-width:760px}
+.availability-card td{vertical-align:middle}
+.availability-card .status.unavailable{background:var(--color-warm-neutral);color:var(--color-danger-deep)}
+.admin-shell .footer{padding:15px 32px;border-top:1px solid var(--color-neutral-300)}
+.admin-content .connection-badge{color:var(--color-ink)}
+@media(max-width:900px){.availability-form{grid-template-columns:repeat(3,minmax(0,1fr))}.admin-login-form{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-login-form .button{grid-column:1/-1}}
+@media(max-width:600px){.admin-topbar{height:auto;min-height:66px;padding:12px 16px}.admin-topbar .brand{font-size:17px}.admin-header-actions{gap:6px}.admin-header-actions .button{padding:0 9px;min-height:36px;font-size:11px}.admin-content{padding:24px 16px}.admin-login-form,.availability-form{grid-template-columns:1fr}.availability-form>*{grid-column:1/-1}.admin-auth-card,.admin-editor{padding:17px}.admin-shell .footer{padding:14px 16px;gap:14px;flex-wrap:wrap}}
